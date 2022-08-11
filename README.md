@@ -4,7 +4,9 @@
 		`docker-compose -f docker-compose.yml up`
 3. This should start the database docker container
 4. Place yourself inside the app/   folder
-5. Run the command
+5. To build the python applications run the command
+		`sudo docker build --tag queens .`
+6. Run the command
 		`sudo docker run -it --net challenge_default queens`
 	- This is assumming you the folder is still challenge
 6. This will ask you for the dimension of the chess board e.g. 4,5,6...12
