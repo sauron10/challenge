@@ -7,5 +7,4 @@ before_install:
   - pip install -U sqlalchemy
   - pip install -U postgres
 script: pytest
-services:
-  - docker
+
