@@ -1,0 +1,22 @@
+version : '1'
+services:
+  database:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - queens-db:/var/lib/postgresql/data
+  # queens:
+  #   image: queens
+  #   depends_on:
+  #     - database
+  #   stdin_open: true
+  #   tty: true
+volumes:
+  queens-db:
+    driver: local
+
