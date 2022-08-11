@@ -115,6 +115,7 @@ def main(size):
   solutions = getAnswerNumber(list(range(size)),size)
   print(solutions)
   return solutions
+  
 
 if __name__ == '__main__':
   size = input('Dimension: ')
