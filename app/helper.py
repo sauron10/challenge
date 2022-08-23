@@ -3,9 +3,13 @@ from sqlalchemy import create_engine
 from sqlalchemy.exc import (OperationalError,IntegrityError)
 from solution import Solution
 from table import meta
+from sqlalchemy.exc import OperationalError
 #challenge_db is the name of the postgres container so they can communicate through docker's network
 engine = create_engine('postgresql://postgres:postgres@challenge_db:5432/solutions',echo=False,future=True)
-meta.create_all(engine)
+try:
+  meta.create_all(engine)
+except OperationalError:
+  print('There was an error connecting to the database') 
 '''Helps saving the input into the database '''
 def write_to_db(queue:list[Solution],in_db:bool) -> tuple[bool,bool]:
     with Session(engine) as session:
