@@ -1,3 +1,4 @@
+'''Class thats describes a Point with coordinates x and y'''
 class Point:
   def __init__(self,x:int,y:int)-> None:
     self.x = x

@@ -2,9 +2,11 @@ from sqlalchemy.orm import (Session)
 from sqlalchemy import create_engine
 from sqlalchemy.exc import (OperationalError,IntegrityError)
 from solution import Solution
-
+#challenge_db is the name of the postgres container so they can communicate through docker's network
 engine = create_engine('postgresql://postgres:postgres@challenge_db:5432/solutions',echo=False,future=True)
 
+
+'''Helps saving the input into the database '''
 def write_to_db(queue:list[Solution],in_db:bool) -> tuple[bool,bool]:
     with Session(engine) as session:
       try:
@@ -23,3 +25,4 @@ def write_to_db(queue:list[Solution],in_db:bool) -> tuple[bool,bool]:
       except Exception as e:
         print("There was an error with the database",e)
         return False,False
+

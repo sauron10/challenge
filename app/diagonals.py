@@ -1,5 +1,6 @@
 from point import Point
 
+'''Class that describes a pair of diagonals for a certain point up and down'''
 class Diagonals: 
   def __init__(self,point:Point) -> None:
     self.down = point.x - point.y

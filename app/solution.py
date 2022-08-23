@@ -3,7 +3,7 @@ from sqlalchemy.orm import (declarative_base)
 
 Base = declarative_base()
 
-
+'''Class representing the model of the solution inside the database'''
 class Solution(Base):
   __tablename__ = 'diagrams'
   size = Column(Integer)

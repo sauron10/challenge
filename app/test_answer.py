@@ -30,6 +30,7 @@ CORRECT_ANSWER={
   # 27:234907967154122528 
 }
 
+'''Tests that the number of possible answers is the same as the wikipedia table '''
 def test_number_of_answers()-> None:
   for key in CORRECT_ANSWER:
     print(f'N = {key}')
