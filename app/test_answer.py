@@ -13,8 +13,8 @@ CORRECT_ANSWER={
   10:724,
   11:2680,
   12:14200,
-  # 13:73712,
-  # 14:365596,
+  13:73712,
+  14:365596,
   # 15:2279184,
   # 16:14772512,
   # 17:95815104,
@@ -30,9 +30,12 @@ CORRECT_ANSWER={
   # 27:234907967154122528 
 }
 
-def test_number_of_answers():
-  for key in CORRECT_ANSWER:  
-    assert queens.main(key) == CORRECT_ANSWER[key]
+def test_number_of_answers()-> None:
+  for key in CORRECT_ANSWER:
+    print(f'N = {key}')
+    answer = queens.main(key)
+    assert answer == CORRECT_ANSWER[key]
+    print()
 
 # This are test of tools and probably would change, not exactly suitable for TDD 
 

@@ -10,6 +10,9 @@ services:
       - '5432:5432'
     volumes:
       - queens-db:/var/lib/postgresql/data
+    networks:
+      - challenge-net
+    container_name: challenge_db
   # queens:
   #   image: queens
   #   depends_on:
@@ -19,4 +22,8 @@ services:
 volumes:
   queens-db:
     driver: local
+networks:
+  challenge-net:
+    driver: bridge
+    name: challenge_net
 

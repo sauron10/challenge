@@ -7,8 +7,7 @@
 5. To build the python applications run the command
 		`sudo docker build --tag queens .`
 6. Run the command
-		`sudo docker run -it --net challenge_default queens`
-	- This is assuming you the folder is still challenge
+		`sudo docker run -it --net challenge_net queens`
 6. This will ask you for the dimension of the chess board e.g. 4,5,6...12
 7. If you want to run the test you will have to add pytest at the end 
 		`sudo docker run -it --net challenge_default queens pytest`
