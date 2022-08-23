@@ -5,7 +5,7 @@ Base = declarative_base()
 
 '''Class representing the model of the solution inside the database'''
 class Solution(Base):
-  __tablename__ = 'diagrams'
+  __tablename__ = 'answers'
   size = Column(Integer)
   points = Column(String, primary_key=True)
 

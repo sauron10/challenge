@@ -6,12 +6,13 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=solutions
     ports:
       - '5432:5432'
     volumes:
-      - queens-db:/var/lib/postgresql/data
+      - queens_db:/var/lib/postgresql/data
     networks:
-      - challenge-net
+      - challenge_net
     container_name: challenge_db
   # queens:
   #   image: queens
@@ -20,10 +21,10 @@ services:
   #   stdin_open: true
   #   tty: true
 volumes:
-  queens-db:
+  queens_db:
     driver: local
 networks:
-  challenge-net:
+  challenge_net:
     driver: bridge
     name: challenge_net
 
